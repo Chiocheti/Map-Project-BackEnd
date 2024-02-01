@@ -1,7 +1,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('configs', {
+    await queryInterface.createTable('markets', {
       id: {
         allowNull: false,
         primaryKey: true,
@@ -12,27 +12,21 @@ module.exports = {
           isUUID: 4,
         },
       },
-      amount: {
+      lat: {
         allowNull: false,
-        type: Sequelize.FLOAT,
+        type: Sequelize.STRING,
       },
-      check_number: {
+      lgn: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      description: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      priority: {
         allowNull: false,
         type: Sequelize.INTEGER,
-      },
-      receiver_number: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-      },
-      actualized_monthly_credit: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN,
-        defaultValue: false,
-      },
-      actualized_annual_credit: {
-        allowNull: false,
-        type: Sequelize.BOOLEAN,
-        defaultValue: false,
       },
       created_at: {
         allowNull: false,
@@ -47,6 +41,6 @@ module.exports = {
     });
   },
   async down(queryInterface) {
-    await queryInterface.dropTable('configs');
+    await queryInterface.dropTable('markets');
   },
 };

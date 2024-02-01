@@ -10,11 +10,11 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Server Status: ON 🚀' });
+  res.json({ message: 'MAPING serve status: ON' });
 });
 
 app.use(routes);
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server listening on port ${process.env.PORT}`);
+  console.log(`Maping server is listening on the port -> ${process.env.PORT}`);
 });
